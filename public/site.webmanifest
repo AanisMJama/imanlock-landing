@@ -1,0 +1,16 @@
+{
+  "name": "ImanLock",
+  "short_name": "ImanLock",
+  "description": "Remember Allah before you unlock. Block distracting apps and build stronger Islamic habits.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#075C22",
+  "theme_color": "#075C22",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
