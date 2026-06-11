@@ -125,10 +125,10 @@ export default function TermsPage() {
         <p>
           For questions about these Terms, contact us at{" "}
           <a
-            href="mailto:support@imanlock.app"
+            href="mailto:hello@imanlock.app"
             className="font-semibold text-iman-primary hover:underline"
           >
-            support@imanlock.app
+            hello@imanlock.app
           </a>
           .
         </p>

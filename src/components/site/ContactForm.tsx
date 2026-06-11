@@ -16,7 +16,7 @@ export function ContactForm() {
     // then show a confirmation state.
     const subject = encodeURIComponent(`ImanLock support — ${name || "Inquiry"}`);
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:support@imanlock.app?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:hello@imanlock.app?subject=${subject}&body=${body}`;
     setSent(true);
   };
 
@@ -43,10 +43,10 @@ export function ContactForm() {
               Your message is ready in your email app. If it didn&apos;t open,
               email us directly at{" "}
               <a
-                href="mailto:support@imanlock.app"
+                href="mailto:hello@imanlock.app"
                 className="font-semibold text-iman-primary hover:underline"
               >
-                support@imanlock.app
+                hello@imanlock.app
               </a>
               . We aim to respond within 48 hours.
             </p>

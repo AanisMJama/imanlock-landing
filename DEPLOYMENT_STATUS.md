@@ -35,7 +35,7 @@
   JSON-LD structured data, `robots.txt`, and `sitemap.xml`.
 - Legal pages ready for app-store submission (Privacy Policy with Accessibility
   Service disclosure; Terms of Service).
-- Contact form with `mailto:` fallback (`support@imanlock.app`).
+- Contact form with `mailto:` fallback (`hello@imanlock.app`).
 - Subscription management page with placeholder status + restore/manage actions.
 
 ## Pending Tasks

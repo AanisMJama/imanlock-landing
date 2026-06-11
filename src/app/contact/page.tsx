@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/site/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us — ImanLock",
   description:
-    "Get in touch with the ImanLock team. Send us a message or email support@imanlock.app. We aim to respond within 48 hours.",
+    "Get in touch with the ImanLock team. Send us a message or email hello@imanlock.app. We aim to respond within 48 hours.",
   alternates: { canonical: "https://imanlock.app/contact" },
 };
 
@@ -26,10 +26,10 @@ export default function ContactPage() {
               Prefer email? Reach us directly at:
             </p>
             <a
-              href="mailto:support@imanlock.app"
+              href="mailto:hello@imanlock.app"
               className="mt-2 inline-block font-semibold text-iman-primary hover:underline"
             >
-              support@imanlock.app
+              hello@imanlock.app
             </a>
           </div>
 

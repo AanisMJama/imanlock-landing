@@ -64,10 +64,10 @@ export default function PrivacyPage() {
           or notify you when the app becomes available in your region. You can
           ask us to delete your email at any time by contacting{" "}
           <a
-            href="mailto:support@imanlock.app"
+            href="mailto:hello@imanlock.app"
             className="font-semibold text-iman-primary hover:underline"
           >
-            support@imanlock.app
+            hello@imanlock.app
           </a>
           . We do not send marketing from third parties.
         </p>
@@ -185,10 +185,10 @@ export default function PrivacyPage() {
           or delete your personal data, and to object to or restrict certain
           processing. To exercise these rights, email us at{" "}
           <a
-            href="mailto:support@imanlock.app"
+            href="mailto:hello@imanlock.app"
             className="font-semibold text-iman-primary hover:underline"
           >
-            support@imanlock.app
+            hello@imanlock.app
           </a>
           .
         </p>
@@ -209,10 +209,10 @@ export default function PrivacyPage() {
         </p>
         <p>
           <a
-            href="mailto:support@imanlock.app"
+            href="mailto:hello@imanlock.app"
             className="font-semibold text-iman-primary hover:underline"
           >
-            support@imanlock.app
+            hello@imanlock.app
           </a>
         </p>
       </Section>
