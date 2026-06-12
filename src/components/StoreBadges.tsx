@@ -1,4 +1,4 @@
-"use client";
+import type { ReactNode } from "react";
 
 type BadgeProps = {
   href?: string;
@@ -6,16 +6,56 @@ type BadgeProps = {
   className?: string;
 };
 
+const badgeBase =
+  "group relative inline-flex items-center gap-3 rounded-2xl bg-black px-5 py-3 text-white shadow-lg";
+
+const badgeDisabled =
+  "cursor-not-allowed opacity-70 shadow-md hover:translate-y-0 hover:shadow-md";
+
+const badgeInteractive =
+  "transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl";
+
+function BadgeShell({
+  href,
+  comingSoon,
+  className,
+  ariaLabel,
+  children,
+}: {
+  href?: string;
+  comingSoon: boolean;
+  className: string;
+  ariaLabel: string;
+  children: ReactNode;
+}) {
+  const classes = `${badgeBase} ${comingSoon ? badgeDisabled : badgeInteractive} ${className}`;
+
+  if (comingSoon) {
+    return (
+      <span aria-label={`${ariaLabel} — coming soon`} className={classes}>
+        {children}
+      </span>
+    );
+  }
+
+  return (
+    <a href={href} aria-label={ariaLabel} className={classes}>
+      {children}
+    </a>
+  );
+}
+
 export function GooglePlayBadge({
-  href = "#download",
-  comingSoon = false,
+  href,
+  comingSoon = true,
   className = "",
 }: BadgeProps) {
   return (
-    <a
+    <BadgeShell
       href={href}
-      aria-label="Get it on Google Play"
-      className={`group relative inline-flex items-center gap-3 rounded-2xl bg-black px-5 py-3 text-white shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl ${className}`}
+      comingSoon={comingSoon}
+      className={className}
+      ariaLabel="Get it on Google Play"
     >
       <svg viewBox="0 0 512 512" className="h-7 w-7 shrink-0" aria-hidden="true">
         <path
@@ -41,20 +81,21 @@ export function GooglePlayBadge({
         </span>
         <span className="text-lg font-semibold">Google Play</span>
       </span>
-    </a>
+    </BadgeShell>
   );
 }
 
 export function AppStoreBadge({
-  href = "#download",
+  href,
   comingSoon = true,
   className = "",
 }: BadgeProps) {
   return (
-    <a
+    <BadgeShell
       href={href}
-      aria-label="Download on the App Store"
-      className={`group relative inline-flex items-center gap-3 rounded-2xl bg-black px-5 py-3 text-white shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl ${className}`}
+      comingSoon={comingSoon}
+      className={className}
+      ariaLabel="Download on the App Store"
     >
       <svg viewBox="0 0 384 512" className="h-7 w-7 shrink-0 fill-white" aria-hidden="true">
         <path d="M318.7 268c-.2-37 16.6-65 50.6-86-19-27-47.5-42-85.6-45-36-3-75 21-89 21-14 0-49-20-78-19-40 .6-77 23-98 59-42 73-11 181 30 240 20 29 44 62 75 60 30-1 41-19 78-19 36 0 47 19 78 18 32-.5 53-29 73-58 14-21 25-44 31-67-1-1-59-23-59-90zM262 60c17-21 28-50 25-79-25 1-55 17-73 38-16 18-30 47-26 75 28 2 56-14 74-34z" />
@@ -65,6 +106,6 @@ export function AppStoreBadge({
         </span>
         <span className="text-lg font-semibold">App Store</span>
       </span>
-    </a>
+    </BadgeShell>
   );
 }

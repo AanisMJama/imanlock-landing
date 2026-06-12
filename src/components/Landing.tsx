@@ -40,10 +40,10 @@ export function Landing() {
             </div>
           </div>
 
-          {/* Download badges */}
+          {/* Download badges — disabled until real store URLs are available */}
           <div className="order-3 flex flex-wrap items-center justify-center gap-3 lg:col-start-1 lg:row-start-2 lg:justify-start lg:self-start">
-            <AppStoreBadge href="#" comingSoon={false} />
-            <GooglePlayBadge href="#" />
+            <AppStoreBadge comingSoon />
+            <GooglePlayBadge comingSoon />
           </div>
         </div>
       </section>
