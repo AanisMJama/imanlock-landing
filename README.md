@@ -1,6 +1,6 @@
-# ImanLock — Landing Page
+# ImanFocus — Landing Page
 
-A premium, conversion-focused landing page for **ImanLock**, the Islamic app that helps Muslims remember Allah before using distracting apps.
+A premium, conversion-focused landing page for **ImanFocus**, the Islamic app that helps Muslims remember Allah before using distracting apps.
 
 > _"Remember Allah Before You Unlock."_
 
@@ -54,23 +54,29 @@ npm run start
 
 | Route           | Description                                              |
 | --------------- | -------------------------------------------------------- |
-| `/`             | Single-screen hero with animated ImanLock phone preview  |
+| `/`             | Single-screen hero with animated ImanFocus phone preview  |
 | `/privacy`      | Privacy Policy (Google Play & App Store ready)           |
 | `/terms`        | Terms of Service                                         |
-| `/contact`      | Contact page with form (`mailto:` fallback)              |
+| `/contact`      | Contact page with Resend-powered form                    |
 | `/subscription` | Manage Subscription                                      |
 
 ## Deploying to Vercel
 
-This project is a standard Next.js App Router app and deploys to Vercel with
-zero configuration. There are **no required environment variables**.
+This project is a standard Next.js App Router app and deploys to Vercel. The
+contact form requires Resend environment variables in Production.
+
+| Variable | Required | Notes |
+| -------- | -------- | ----- |
+| `RESEND_API_KEY` | Yes | Resend API key used by `/api/contact`. |
+| `CONTACT_TO_EMAIL` | Temporary | Use a personal inbox until `hello@imanfocus.app` is hosted. |
+| `CONTACT_FROM_EMAIL` | Optional | Defaults to `ImanFocus Contact <contact@imanfocus.app>`. |
 
 ### 1. Push to GitHub
 
 ```bash
 git init
 git add .
-git commit -m "Launch ImanLock landing page"
+git commit -m "Launch ImanFocus landing page"
 git branch -M main
 git remote add origin https://github.com/<your-username>/imanlock-landing.git
 git push -u origin main
@@ -84,7 +90,7 @@ git push -u origin main
    - Build command: `next build`
    - Output: handled automatically
    - Install command: `npm install`
-4. Leave environment variables empty and click **Deploy**.
+4. Add the Resend environment variables above and click **Deploy**.
 
 Your site goes live at a `*.vercel.app` URL within ~1 minute.
 
@@ -96,10 +102,10 @@ vercel        # preview deploy
 vercel --prod # production deploy
 ```
 
-### 3. Add the custom domain `imanlock.app`
+### 3. Add the custom domain `imanfocus.app`
 
 1. In the Vercel project → **Settings → Domains**.
-2. Add `imanlock.app` and `www.imanlock.app`.
+2. Add `imanfocus.app` and `www.imanfocus.app`.
 3. Vercel shows the DNS records to configure at your domain registrar:
 
 | Type    | Name  | Value                  |
@@ -111,7 +117,7 @@ vercel --prod # production deploy
 > the examples above. If your registrar supports it, you can instead point the
 > domain's nameservers to Vercel for fully managed DNS.
 
-4. Set `imanlock.app` as the **primary** domain and redirect `www` to it (or
+4. Set `imanfocus.app` as the **primary** domain and redirect `www` to it (or
    vice-versa). Vercel provisions the SSL certificate automatically once DNS
    propagates (usually minutes, up to 48h).
 
@@ -129,13 +135,14 @@ src/
     terms/page.tsx
     contact/page.tsx
     subscription/page.tsx
+    api/contact/route.ts # Resend contact form endpoint
   components/
     Landing.tsx         # single-screen hero layout
     icons.tsx           # brand logo + all SVG icons
     StoreBadges.tsx     # Google Play & App Store badges
     phone/
       PhoneFrame.tsx    # realistic device bezel + status bar
-      HeroPhone.tsx     # auto-playing 8-step ImanLock journey
+      HeroPhone.tsx     # auto-playing 8-step ImanFocus journey
       screens.tsx       # shared app screens (Mood, Quran, etc.)
     site/
       SiteHeader.tsx    # logo header for content pages
@@ -147,7 +154,7 @@ src/
 
 ## Highlights
 
-- **Auto-playing phone preview** — a live, animated 8-step ImanLock journey
+- **Auto-playing phone preview** — a live, animated 8-step ImanFocus journey
   (Home → Choose apps → Locked → Mood → Quran → Dua → Unlock → Streak).
 - No static screenshots — every screen is a real, animated React component.
 - Fully responsive, SEO-optimized, and production-ready.

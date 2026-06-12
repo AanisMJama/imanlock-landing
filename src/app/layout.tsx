@@ -15,15 +15,15 @@ const amiri = Amiri({
   display: "swap",
 });
 
-const SITE_URL = "https://imanlock.app";
+const SITE_URL = "https://imanfocus.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "ImanLock — Remember Allah Before You Unlock",
+  title: "ImanFocus — Remember Allah Before You Unlock",
   description:
-    "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanLock.",
+    "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanFocus.",
   keywords: [
-    "ImanLock",
+    "ImanFocus",
     "Islamic app",
     "app blocker",
     "remember Allah",
@@ -33,24 +33,24 @@ export const metadata: Metadata = {
     "screen time",
     "digital wellbeing",
   ],
-  authors: [{ name: "ImanLock" }],
+  authors: [{ name: "ImanFocus" }],
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "ImanLock",
-    title: "ImanLock — Remember Allah Before You Unlock",
+    siteName: "ImanFocus",
+    title: "ImanFocus — Remember Allah Before You Unlock",
     description:
-      "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanLock.",
+      "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanFocus.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ImanLock — Remember Allah Before You Unlock",
+    title: "ImanFocus — Remember Allah Before You Unlock",
     description:
-      "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanLock.",
+      "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanFocus.",
   },
   icons: {
     icon: "/favicon.svg",
@@ -67,9 +67,9 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
-  name: "ImanLock",
+  name: "ImanFocus",
   description:
-    "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanLock.",
+    "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanFocus.",
   applicationCategory: "LifestyleApplication",
   operatingSystem: "Android",
   url: SITE_URL,

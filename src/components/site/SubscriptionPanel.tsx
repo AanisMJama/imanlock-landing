@@ -50,7 +50,7 @@ export function SubscriptionPanel() {
       {/* Premium preview card */}
       <div className="rounded-3xl border border-iman-primary/15 bg-gradient-to-br from-iman-light/70 to-white p-6 shadow-card sm:p-8">
         <h3 className="text-lg font-bold text-iman-deep">
-          ImanLock Premium <span className="text-iman-primary">(soon)</span>
+          ImanFocus Premium <span className="text-iman-primary">(soon)</span>
         </h3>
         <ul className="mt-4 space-y-2.5">
           {[

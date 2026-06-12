@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { PageShell, Section, Bullets } from "@/components/site/PageShell";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — ImanLock",
+  title: "Privacy Policy — ImanFocus",
   description:
-    "How ImanLock collects, uses, and protects your data. Learn about our analytics, device permissions, and Accessibility Service usage. We never sell your personal data.",
-  alternates: { canonical: "https://imanlock.app/privacy" },
+    "How ImanFocus collects, uses, and protects your data. Learn about our analytics, device permissions, and Accessibility Service usage. We never sell your personal data.",
+  alternates: { canonical: "https://imanfocus.app/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -13,12 +13,12 @@ export default function PrivacyPage() {
     <PageShell
       eyebrow="Legal"
       title="Privacy Policy"
-      intro="Your trust is an amanah. This policy explains what ImanLock collects, how it is used, and the choices you have."
+      intro="Your trust is an amanah. This policy explains what ImanFocus collects, how it is used, and the choices you have."
       updated="June 10, 2026"
     >
-      <Section title="What ImanLock Does">
+      <Section title="What ImanFocus Does">
         <p>
-          ImanLock is a mindfulness and digital wellbeing app for Muslims. It
+          ImanFocus is a mindfulness and digital wellbeing app for Muslims. It
           helps you pause before opening distracting apps by guiding you through
           a moment of remembrance — checking in with your mood, reflecting on a
           verse of the Quran, and making dua — before your selected apps unlock.
@@ -59,15 +59,15 @@ export default function PrivacyPage() {
 
       <Section title="Email Addresses &amp; Waitlist">
         <p>
-          If you join the ImanLock waitlist or email us, we store your email
+          If you join the ImanFocus waitlist or email us, we store your email
           address solely to send you product updates, respond to your inquiry,
           or notify you when the app becomes available in your region. You can
           ask us to delete your email at any time by contacting{" "}
           <a
-            href="mailto:hello@imanlock.app"
+            href="mailto:hello@imanfocus.app"
             className="font-semibold text-iman-primary hover:underline"
           >
-            hello@imanlock.app
+            hello@imanfocus.app
           </a>
           . We do not send marketing from third parties.
         </p>
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
 
       <Section title="Device Permissions">
         <p>
-          ImanLock only requests permissions needed for core functionality, and
+          ImanFocus only requests permissions needed for core functionality, and
           explains each one before requesting it:
         </p>
         <Bullets
@@ -96,7 +96,7 @@ export default function PrivacyPage() {
             </>,
             <>
               <strong>Usage access / display over other apps</strong> — to show
-              the ImanLock lock screen on top of distracting apps.
+              the ImanFocus lock screen on top of distracting apps.
             </>,
             <>
               <strong>Notifications</strong> — for Salah reminders, dhikr
@@ -108,13 +108,13 @@ export default function PrivacyPage() {
 
       <Section title="Accessibility Service Disclosure">
         <p>
-          ImanLock uses Android&apos;s Accessibility Service to provide its core
+          ImanFocus uses Android&apos;s Accessibility Service to provide its core
           feature: gently intervening before you open a distracting app.
         </p>
         <Bullets
           items={[
-            "The Accessibility Service is used only to detect which app is currently in the foreground so ImanLock can display the remembrance/lock screen for apps you have chosen to lock.",
-            "ImanLock does not read, collect, log, or transmit the content of your screen, your keystrokes, your messages, or any personal data accessed via the Accessibility Service.",
+            "The Accessibility Service is used only to detect which app is currently in the foreground so ImanFocus can display the remembrance/lock screen for apps you have chosen to lock.",
+            "ImanFocus does not read, collect, log, or transmit the content of your screen, your keystrokes, your messages, or any personal data accessed via the Accessibility Service.",
             "All processing related to the Accessibility Service happens locally on your device.",
             "You may disable the Accessibility Service at any time in your device settings, which will turn off app blocking.",
           ]}
@@ -123,9 +123,9 @@ export default function PrivacyPage() {
 
       <Section title="How App Blocking Works">
         <p>
-          When you choose apps to lock, ImanLock detects when one of those apps
+          When you choose apps to lock, ImanFocus detects when one of those apps
           is launched and presents a full-screen reflection before granting
-          access. This blocking happens entirely on your device. ImanLock does
+          access. This blocking happens entirely on your device. ImanFocus does
           not see what you do inside those apps — only that one of your selected
           apps was opened, so it can show the lock screen.
         </p>
@@ -145,7 +145,7 @@ export default function PrivacyPage() {
       <Section title="Data Sharing — We Never Sell Your Data">
         <p>
           <strong>
-            ImanLock does not sell, rent, or trade your personal data to anyone.
+            ImanFocus does not sell, rent, or trade your personal data to anyone.
           </strong>{" "}
           We do not share your personal information with advertisers. Limited
           data may be processed by trusted service providers (such as analytics
@@ -172,7 +172,7 @@ export default function PrivacyPage() {
 
       <Section title="Children's Privacy">
         <p>
-          ImanLock is not directed to children under 13 (or the minimum age
+          ImanFocus is not directed to children under 13 (or the minimum age
           required in your country). We do not knowingly collect personal
           information from children. If you believe a child has provided us
           data, please contact us and we will delete it.
@@ -185,10 +185,10 @@ export default function PrivacyPage() {
           or delete your personal data, and to object to or restrict certain
           processing. To exercise these rights, email us at{" "}
           <a
-            href="mailto:hello@imanlock.app"
+            href="mailto:hello@imanfocus.app"
             className="font-semibold text-iman-primary hover:underline"
           >
-            hello@imanlock.app
+            hello@imanfocus.app
           </a>
           .
         </p>
@@ -209,10 +209,10 @@ export default function PrivacyPage() {
         </p>
         <p>
           <a
-            href="mailto:hello@imanlock.app"
+            href="mailto:hello@imanfocus.app"
             className="font-semibold text-iman-primary hover:underline"
           >
-            hello@imanlock.app
+            hello@imanfocus.app
           </a>
         </p>
       </Section>

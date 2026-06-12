@@ -8,7 +8,7 @@ const config: Config = {
     extend: {
       colors: {
         iman: {
-          // Core brand palette — must match the ImanLock app exactly
+          // Core brand palette — must match the ImanFocus app exactly
           primary: "#33A60A",
           mid: "#1F8A0A",
           dark: "#075C22",

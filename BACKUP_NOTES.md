@@ -1,20 +1,20 @@
 # Backup & Recovery Notes
 
-Reference for restoring, redeploying, or handing off the ImanLock landing page.
+Reference for restoring, redeploying, or handing off the ImanFocus landing page.
 
 ## Key URLs
 
 | Resource           | URL                                                          |
 | ------------------ | ------------------------------------------------------------ |
 | **GitHub repo**    | https://github.com/AanisMJama/imanlock-landing               |
-| **Live site**      | https://imanlock.app                                         |
+| **Live site**      | https://imanfocus.app                                         |
 | **Vercel project** | https://vercel.com/dashboard → project `imanlock-landing`    |
 | **Default branch** | `main` (always kept deployable)                              |
 | **Release tag**    | `v1.0-landing-live`                                          |
 
 ## Domain Information
 
-- **Domain:** `imanlock.app`
+- **Domain:** `imanfocus.app`
 - **Connected to:** Vercel (project `imanlock-landing`)
 - **DNS records** (use the exact values shown in the Vercel dashboard):
 
@@ -27,9 +27,13 @@ Reference for restoring, redeploying, or handing off the ImanLock landing page.
 
 ## Environment Variables
 
-- **None required.** The project deploys with zero environment variables.
-- If future features are added (analytics, email backend), document any new
-  variables here and add them in **Vercel → Settings → Environment Variables**.
+Set these in **Vercel → Settings → Environment Variables** for Production:
+
+| Name | Required | Purpose |
+| ---- | -------- | ------- |
+| `RESEND_API_KEY` | Yes | Sends contact form messages through Resend. |
+| `CONTACT_TO_EMAIL` | Temporary | Overrides the recipient while `hello@imanfocus.app` is not hosted yet. |
+| `CONTACT_FROM_EMAIL` | Optional | Overrides the verified Resend sender. Defaults to `ImanFocus Contact <contact@imanfocus.app>`. |
 
 ## Local Development
 
@@ -79,8 +83,8 @@ vercel --prod   # production deploy
 
 1. Ensure the GitHub repo exists and contains the latest `main`.
 2. Go to [vercel.com/new](https://vercel.com/new) → import `imanlock-landing`.
-3. Framework auto-detects as **Next.js**; no env vars needed → **Deploy**.
-4. Re-add the domain `imanlock.app` under **Settings → Domains** and confirm DNS.
+3. Framework auto-detects as **Next.js**; add the Resend env vars above → **Deploy**.
+4. Re-add the domain `imanfocus.app` under **Settings → Domains** and confirm DNS.
 
 ## Restore a specific release
 

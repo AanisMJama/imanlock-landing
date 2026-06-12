@@ -1,20 +1,20 @@
-# ImanLock — Project Roadmap
+# ImanFocus — Project Roadmap
 
 Status legend: ✅ Done · 🟡 In progress · ⬜ Pending
 
 ## 1. Landing Page
 
 - ✅ Single-screen hero (headline + subheadline + badges + footer)
-- ✅ Animated ImanLock phone preview (8-step auto-playing journey)
+- ✅ Animated ImanFocus phone preview (8-step auto-playing journey)
 - ✅ Responsive design (mobile + desktop)
 - ✅ Legal pages: Privacy Policy, Terms of Service
-- ✅ Contact page (with form + `mailto:` fallback)
+- ✅ Contact page (with Resend-powered form)
 - ✅ Manage Subscription page (placeholder)
 - ✅ SEO metadata, sitemap, robots
-- ✅ Deployed to Vercel + connected to `imanlock.app`
+- ✅ Deployed to Vercel + connected to `imanfocus.app`
 - ✅ Release tagged `v1.0-landing-live`
 - ⬜ Replace placeholder store badge links with real URLs
-- ⬜ Wire contact form to a real email backend
+- ✅ Wire contact form to a real email backend
 
 ## 2. Android App
 
@@ -29,7 +29,7 @@ Status legend: ✅ Done · 🟡 In progress · ⬜ Pending
 - ⬜ Create Google Play Console developer account
 - ⬜ App listing: title, short & full description, category
 - ⬜ Graphic assets: app icon, feature graphic, phone screenshots
-- ⬜ Privacy Policy URL → `https://imanlock.app/privacy` ✅ (page live)
+- ⬜ Privacy Policy URL → `https://imanfocus.app/privacy` ✅ (page live)
 - ⬜ Data safety form (declare data collection & Accessibility Service usage)
 - ⬜ Accessibility Service prominent disclosure (in-app + listing)
 - ⬜ Content rating questionnaire

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://imanlock.app/sitemap.xml",
+    sitemap: "https://imanfocus.app/sitemap.xml",
   };
 }

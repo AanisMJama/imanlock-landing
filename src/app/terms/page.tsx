@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { PageShell, Section, Bullets } from "@/components/site/PageShell";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — ImanLock",
+  title: "Terms of Service — ImanFocus",
   description:
-    "The terms governing your use of ImanLock, including permitted use, subscriptions, refunds, limitation of liability, and account termination.",
-  alternates: { canonical: "https://imanlock.app/terms" },
+    "The terms governing your use of ImanFocus, including permitted use, subscriptions, refunds, limitation of liability, and account termination.",
+  alternates: { canonical: "https://imanfocus.app/terms" },
 };
 
 export default function TermsPage() {
@@ -13,12 +13,12 @@ export default function TermsPage() {
     <PageShell
       eyebrow="Legal"
       title="Terms of Service"
-      intro="Please read these terms carefully. By using ImanLock, you agree to the terms below."
+      intro="Please read these terms carefully. By using ImanFocus, you agree to the terms below."
       updated="June 10, 2026"
     >
       <Section title="1. Acceptance of Terms">
         <p>
-          By downloading, installing, or using the ImanLock application (the
+          By downloading, installing, or using the ImanFocus application (the
           “App”), you agree to be bound by these Terms of Service (the “Terms”).
           If you do not agree to these Terms, please do not use the App. If you
           use the App on behalf of an organization, you represent that you have
@@ -28,7 +28,7 @@ export default function TermsPage() {
 
       <Section title="2. Description of Service &amp; Permitted Use">
         <p>
-          ImanLock is a digital wellbeing app that helps you pause and remember
+          ImanFocus is a digital wellbeing app that helps you pause and remember
           Allah before using distracting apps. You may use the App for your
           personal, non-commercial purposes in accordance with these Terms and
           all applicable laws.
@@ -49,14 +49,14 @@ export default function TermsPage() {
           items={[
             "You are responsible for the device permissions you grant and for configuring the App to suit your needs.",
             "You are responsible for maintaining the confidentiality of any account credentials, if applicable.",
-            "You acknowledge that ImanLock is a tool to support mindful phone use and is not a substitute for professional, medical, or religious advice.",
+            "You acknowledge that ImanFocus is a tool to support mindful phone use and is not a substitute for professional, medical, or religious advice.",
           ]}
         />
       </Section>
 
       <Section title="4. Subscription Terms">
         <p>
-          ImanLock may offer optional paid subscriptions that unlock premium
+          ImanFocus may offer optional paid subscriptions that unlock premium
           features. The following applies to subscriptions:
         </p>
         <Bullets
@@ -82,7 +82,7 @@ export default function TermsPage() {
       <Section title="6. Intellectual Property">
         <p>
           The App, including its design, content, logos, and software, is owned
-          by ImanLock and protected by intellectual property laws. Quranic
+          by ImanFocus and protected by intellectual property laws. Quranic
           verses and authentic narrations are presented respectfully for the
           benefit of users. We grant you a limited, non-exclusive,
           non-transferable license to use the App for personal use.
@@ -97,7 +97,7 @@ export default function TermsPage() {
           perfectly on every device or operating system.
         </p>
         <p>
-          To the maximum extent permitted by law, ImanLock and its team shall
+          To the maximum extent permitted by law, ImanFocus and its team shall
           not be liable for any indirect, incidental, special, consequential, or
           punitive damages, or any loss of data, arising from your use of or
           inability to use the App.
@@ -125,10 +125,10 @@ export default function TermsPage() {
         <p>
           For questions about these Terms, contact us at{" "}
           <a
-            href="mailto:hello@imanlock.app"
+            href="mailto:hello@imanfocus.app"
             className="font-semibold text-iman-primary hover:underline"
           >
-            hello@imanlock.app
+            hello@imanfocus.app
           </a>
           .
         </p>

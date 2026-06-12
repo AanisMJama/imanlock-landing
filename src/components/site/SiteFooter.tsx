@@ -30,7 +30,7 @@ export function SiteFooter({ bordered = true }: { bordered?: boolean }) {
         ))}
       </nav>
       <p className="mt-3 text-sm text-slate-500">
-        © 2026 ImanLock. All rights reserved.
+        © 2026 ImanFocus. All rights reserved.
       </p>
     </footer>
   );

@@ -2,12 +2,12 @@
 
 | Field                 | Value                                      |
 | --------------------- | ------------------------------------------ |
-| **Project**           | ImanLock Landing Page                      |
-| **Domain**            | [imanlock.app](https://imanlock.app)       |
+| **Project**           | ImanFocus Landing Page                      |
+| **Domain**            | [imanfocus.app](https://imanfocus.app)       |
 | **Hosting**           | Vercel                                      |
 | **Deployment status** | 🟢 Live                                     |
 | **Framework**         | Next.js 15 (App Router)                     |
-| **Last deployment**   | June 10, 2026                               |
+| **Last deployment**   | June 12, 2026                               |
 | **Release tag**       | `v1.0-landing-live`                         |
 | **Auto-deploy**       | Enabled — every push to `main` redeploys    |
 
@@ -26,7 +26,7 @@
 ## Current Features
 
 - Single-screen, PrayerLock-style hero with large headline + subheadline.
-- Animated ImanLock phone preview — an auto-playing 8-step journey
+- Animated ImanFocus phone preview — an auto-playing 8-step journey
   (Home → Choose apps → Apps locked → Mood → Quran verse → Dua → Unlock → Streak),
   built entirely from live React components (no static screenshots).
 - App Store + Google Play download badges (placeholder links).
@@ -35,13 +35,14 @@
   JSON-LD structured data, `robots.txt`, and `sitemap.xml`.
 - Legal pages ready for app-store submission (Privacy Policy with Accessibility
   Service disclosure; Terms of Service).
-- Contact form with `mailto:` fallback (`hello@imanlock.app`).
+- Contact form sends messages through the `/api/contact` Resend backend.
 - Subscription management page with placeholder status + restore/manage actions.
 
 ## Pending Tasks
 
 - Replace placeholder store badge links with real Google Play / App Store URLs.
-- Wire the contact form to a real backend/email service (currently `mailto:`).
+- Keep `CONTACT_TO_EMAIL` pointed at the temporary recipient until the
+  `hello@imanfocus.app` mailbox is ready.
 - Add waitlist / email collection.
 - Add analytics (privacy-respecting).
 - Legal review of Privacy Policy & Terms before formal store submission.

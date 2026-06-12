@@ -3,10 +3,10 @@ import { PageShell } from "@/components/site/PageShell";
 import { SubscriptionPanel } from "@/components/site/SubscriptionPanel";
 
 export const metadata: Metadata = {
-  title: "Manage Subscription — ImanLock",
+  title: "Manage Subscription — ImanFocus",
   description:
-    "View your ImanLock subscription status, restore purchases, and manage your plan. Premium subscription features are coming soon.",
-  alternates: { canonical: "https://imanlock.app/subscription" },
+    "View your ImanFocus subscription status, restore purchases, and manage your plan. Premium subscription features are coming soon.",
+  alternates: { canonical: "https://imanfocus.app/subscription" },
 };
 
 export default function SubscriptionPage() {
@@ -14,7 +14,7 @@ export default function SubscriptionPage() {
     <PageShell
       eyebrow="Account"
       title="Manage Subscription"
-      intro="View your plan, restore previous purchases, and manage your ImanLock subscription."
+      intro="View your plan, restore previous purchases, and manage your ImanFocus subscription."
     >
       <SubscriptionPanel />
     </PageShell>

@@ -3,10 +3,10 @@ import { PageShell } from "@/components/site/PageShell";
 import { ContactForm } from "@/components/site/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us — ImanLock",
+  title: "Contact Us — ImanFocus",
   description:
-    "Get in touch with the ImanLock team. Send us a message or email hello@imanlock.app. We aim to respond within 48 hours.",
-  alternates: { canonical: "https://imanlock.app/contact" },
+    "Get in touch with the ImanFocus team. Send us a message or email hello@imanfocus.app. We aim to respond within 48 hours.",
+  alternates: { canonical: "https://imanfocus.app/contact" },
 };
 
 export default function ContactPage() {
@@ -26,10 +26,10 @@ export default function ContactPage() {
               Prefer email? Reach us directly at:
             </p>
             <a
-              href="mailto:hello@imanlock.app"
+              href="mailto:hello@imanfocus.app"
               className="mt-2 inline-block font-semibold text-iman-primary hover:underline"
             >
-              hello@imanlock.app
+              hello@imanfocus.app
             </a>
           </div>
 

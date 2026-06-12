@@ -68,10 +68,10 @@ function appGlyph(id: string) {
 }
 
 /* ================================================================== */
-/*  1. ImanLock Home — hierarchy-based                                 */
+/*  1. ImanFocus Home — hierarchy-based                                 */
 /* ================================================================== */
 
-function ImanLockHome() {
+function ImanFocusHome() {
   const cards = [
     { Icon: IconDua, title: "Dua", sub: "Daily supplication" },
     { Icon: IconDhikr, title: "Dhikr", sub: "23 today" },
@@ -87,7 +87,7 @@ function ImanLockHome() {
         <motion.div {...fade} className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <LogoMark className="h-8 w-8" />
-            <span className="text-base font-bold">ImanLock</span>
+            <span className="text-base font-bold">ImanFocus</span>
           </div>
           <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-medium text-white/90">
             السلام عليكم
@@ -358,7 +358,7 @@ function StreakScreen() {
 }
 
 const SCREENS: (() => ReactNode)[] = [
-  () => <ImanLockHome />,
+  () => <ImanFocusHome />,
   () => <ChooseAppsScreen />,
   () => <AppsLockedScreen />,
   () => <MoodScreen selected="grateful" />,
