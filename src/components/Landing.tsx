@@ -1,6 +1,7 @@
 import { HeroPhone } from "@/components/phone/HeroPhone";
 import { GooglePlayBadge, AppStoreBadge } from "@/components/StoreBadges";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { Waitlist } from "@/components/site/Waitlist";
 
 export function Landing() {
   return (
@@ -26,6 +27,14 @@ export function Landing() {
                 remember Allah
               </span>
             </p>
+
+            {/* Pre-launch waitlist: collect interested users before ads. */}
+            <div className="mt-8 flex flex-col items-center gap-2 lg:items-start">
+              <Waitlist source="landing_hero" />
+              <p className="text-sm text-slate-500">
+                Not public yet — be the first to know when we launch.
+              </p>
+            </div>
           </div>
 
           {/* Phone preview inside green panel */}

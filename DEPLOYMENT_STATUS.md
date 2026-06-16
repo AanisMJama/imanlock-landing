@@ -36,6 +36,9 @@
 - Legal pages ready for app-store submission (Privacy Policy with Accessibility
   Service disclosure; Terms of Service).
 - Contact form sends messages through the `/api/contact` Resend backend.
+- **"Join Early Access" waitlist popup** — captures name + email and stores them
+  in the dedicated `imanfocus-waitlist` Supabase project (`waitlist_signups`
+  table). Auto-opens once per visitor; duplicate emails are handled gracefully.
 - Subscription management page with placeholder status + restore/manage actions.
 
 ## Pending Tasks
@@ -43,7 +46,10 @@
 - Replace placeholder store badge links with real Google Play / App Store URLs.
 - Keep `CONTACT_TO_EMAIL` pointed at the temporary recipient until the
   `hello@imanfocus.app` mailbox is ready.
-- Add waitlist / email collection.
+- Create the `imanfocus-waitlist` Supabase project, run
+  `supabase/migrations/0001_waitlist_signups.sql`, and set
+  `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel to
+  activate the waitlist in production.
 - Add analytics (privacy-respecting).
 - Legal review of Privacy Policy & Terms before formal store submission.
 - Android app debugging and Google Play launch (see `PROJECT_ROADMAP.md`).

@@ -70,6 +70,8 @@ contact form requires Resend environment variables in Production.
 | `RESEND_API_KEY` | Yes | Resend API key used by `/api/contact`. |
 | `CONTACT_TO_EMAIL` | Temporary | Use a personal inbox until `hello@imanfocus.app` is hosted. |
 | `CONTACT_FROM_EMAIL` | Optional | Defaults to `ImanFocus Contact <contact@imanfocus.app>`. |
+| `NEXT_PUBLIC_SUPABASE_URL` | Yes (for waitlist) | API URL of the `imanfocus-waitlist` Supabase project. |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes (for waitlist) | Public anon key of the `imanfocus-waitlist` Supabase project. |
 
 ### 1. Push to GitHub
 
@@ -121,6 +123,39 @@ vercel --prod # production deploy
    vice-versa). Vercel provisions the SSL certificate automatically once DNS
    propagates (usually minutes, up to 48h).
 
+## Waitlist (early access)
+
+ImanFocus isn't publicly available yet, so the landing page collects interested
+users before any ad spend. A **"Join Early Access"** popup captures a **name**
+and **email** and stores them in Supabase.
+
+- **UI:** `src/components/site/Waitlist.tsx` — a popup that can be opened from
+  the hero CTA and also auto-opens once per visitor. CTA button text:
+  **"Join Early Access"**.
+- **Client:** `src/lib/supabaseClient.ts` — browser Supabase client built from
+  the `NEXT_PUBLIC_SUPABASE_*` env vars.
+- **Backend:** a dedicated Supabase project named **`imanfocus-waitlist`** with
+  a `waitlist_signups` table.
+
+### Set up the Supabase backend
+
+1. Create a new Supabase project named **`imanfocus-waitlist`**.
+2. Open **SQL Editor**, paste the contents of
+   [`supabase/migrations/0001_waitlist_signups.sql`](supabase/migrations/0001_waitlist_signups.sql),
+   and run it. This creates the table and a Row Level Security policy that lets
+   anonymous visitors **insert** (join) but **not read** the list.
+3. In **Project Settings → API**, copy the **Project URL** and **anon public**
+   key into `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   (locally in `.env.local`, and in Vercel for production).
+
+`waitlist_signups` columns: `id` (uuid), `name` (text, nullable), `email`
+(text, unique, not null), `source` (text), `platform` (text), `created_at`
+(timestamptz). Duplicate emails are rejected by the unique constraint and the
+popup shows _"You're already on the waitlist."_
+
+> The signup list is readable only with the **service role** key (Supabase
+> dashboard → Table editor), never with the public anon key.
+
 ## Project Structure
 
 ```
@@ -149,7 +184,13 @@ src/
       SiteFooter.tsx    # shared footer with legal links
       PageShell.tsx     # content-page layout + typography helpers
       ContactForm.tsx   # client contact form
+      Waitlist.tsx      # "Join Early Access" popup + Supabase email capture
       SubscriptionPanel.tsx
+  lib/
+    supabaseClient.ts   # public (anon) Supabase client for the waitlist
+supabase/
+  migrations/
+    0001_waitlist_signups.sql  # waitlist table + RLS (run in imanfocus-waitlist)
 ```
 
 ## Highlights
