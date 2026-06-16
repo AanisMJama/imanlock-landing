@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IconCheck } from "@/components/icons";
 import { getSupabaseClient } from "@/lib/supabaseClient";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "sending" | "success" | "duplicate" | "error";
 
@@ -58,7 +59,10 @@ export function Waitlist({
   }, [markSeen]);
 
   // Open via button always works (even if previously seen).
-  const openModal = () => setOpen(true);
+  const openModal = () => {
+    trackEvent({ action: "join_early_access_click", source });
+    setOpen(true);
+  };
 
   // Lock body scroll + close on Escape while open.
   useEffect(() => {
@@ -113,6 +117,11 @@ export function Waitlist({
       // 23505 = unique_violation → email already on the waitlist.
       if (insertError.code === "23505") {
         markSeen();
+        trackEvent({
+          action: "waitlist_submission",
+          source,
+          status: "duplicate",
+        });
         setStatus("duplicate");
         return;
       }
@@ -124,6 +133,7 @@ export function Waitlist({
     }
 
     markSeen();
+    trackEvent({ action: "waitlist_submission", source, status: "success" });
     setStatus("success");
   };
 

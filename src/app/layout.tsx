@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Amiri } from "next/font/google";
+import { GoogleAnalytics } from "@/components/site/GoogleAnalytics";
+import { MicrosoftClarity } from "@/components/site/MicrosoftClarity";
 import "./globals.css";
 
 const inter = Inter({
@@ -88,6 +90,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${amiri.variable}`}>
       <body className="antialiased">
+        <GoogleAnalytics />
+        <MicrosoftClarity />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

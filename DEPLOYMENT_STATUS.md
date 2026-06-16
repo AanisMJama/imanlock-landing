@@ -39,6 +39,8 @@
 - **"Join Early Access" waitlist popup** — captures name + email and stores them
   in the dedicated `imanfocus-waitlist` Supabase project (`waitlist_signups`
   table). Auto-opens once per visitor; duplicate emails are handled gracefully.
+- **Google Analytics 4** — page views, waitlist CTA clicks, waitlist submissions,
+  and footer link clicks (see `docs/analytics-setup.md`).
 - Subscription management page with placeholder status + restore/manage actions.
 
 ## Pending Tasks
@@ -50,7 +52,8 @@
   `supabase/migrations/0001_waitlist_signups.sql`, and set
   `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel to
   activate the waitlist in production.
-- Add analytics (privacy-respecting).
+- Set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel and redeploy (see
+  `docs/analytics-setup.md`).
 - Legal review of Privacy Policy & Terms before formal store submission.
 - Android app debugging and Google Play launch (see `PROJECT_ROADMAP.md`).
 

@@ -72,6 +72,8 @@ contact form requires Resend environment variables in Production.
 | `CONTACT_FROM_EMAIL` | Optional | Defaults to `ImanFocus Contact <contact@imanfocus.app>`. |
 | `NEXT_PUBLIC_SUPABASE_URL` | Yes (for waitlist) | API URL of the `imanfocus-waitlist` Supabase project. |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes (for waitlist) | Public anon key of the `imanfocus-waitlist` Supabase project. |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional | GA4 Measurement ID (`G-…`) for page views and waitlist events. See `docs/analytics-setup.md`. |
+| `NEXT_PUBLIC_CLARITY_PROJECT_ID` | Optional | Microsoft Clarity project ID for heatmaps and session recordings. See [Microsoft Clarity](#microsoft-clarity) below. |
 
 ### 1. Push to GitHub
 
@@ -156,6 +158,32 @@ popup shows _"You're already on the waitlist."_
 > The signup list is readable only with the **service role** key (Supabase
 > dashboard → Table editor), never with the public anon key.
 
+## Microsoft Clarity
+
+[Microsoft Clarity](https://clarity.microsoft.com) provides free heatmaps, scroll
+maps, and session recordings for **imanfocus.app**. Clarity loads globally via
+the official [`@microsoft/clarity`](https://www.npmjs.com/package/@microsoft/clarity)
+npm package and only initializes when the env var is set.
+
+### Set up Clarity
+
+1. Go to [clarity.microsoft.com](https://clarity.microsoft.com) and create a
+   project for `https://imanfocus.app`.
+2. Open **Settings → Overview** and copy the **Project ID** (alphanumeric string).
+3. Add to Vercel (and `.env.local` for local testing):
+
+   ```text
+   NEXT_PUBLIC_CLARITY_PROJECT_ID=your_project_id
+   ```
+
+4. Redeploy — `NEXT_PUBLIC_*` values are inlined at build time.
+
+Implementation: `src/components/site/MicrosoftClarity.tsx` (mounted in
+`src/app/layout.tsx`). No Clarity scripts load when the variable is unset.
+
+Verify in the Clarity dashboard **Recordings** or **Heatmaps** after visiting the
+live site (allow a few minutes for the first sessions to appear).
+
 ## Project Structure
 
 ```
@@ -185,6 +213,8 @@ src/
       PageShell.tsx     # content-page layout + typography helpers
       ContactForm.tsx   # client contact form
       Waitlist.tsx      # "Join Early Access" popup + Supabase email capture
+      GoogleAnalytics.tsx   # GA4 script + page-view tracking
+      MicrosoftClarity.tsx  # Clarity init via @microsoft/clarity
       SubscriptionPanel.tsx
   lib/
     supabaseClient.ts   # public (anon) Supabase client for the waitlist
