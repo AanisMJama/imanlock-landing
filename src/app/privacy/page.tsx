@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       eyebrow="Legal"
       title="Privacy Policy"
       intro="Your trust is an amanah. This policy explains what ImanFocus collects, how it is used, and the choices you have."
-      updated="June 10, 2026"
+      updated="June 22, 2026"
     >
       <Section title="What ImanFocus Does">
         <p>
@@ -90,18 +90,80 @@ export default function PrivacyPage() {
         <Bullets
           items={[
             <>
-              <strong>Accessibility Service</strong> — to detect when a locked
-              app is opened so the reflection screen can appear (see disclosure
+              <strong>Screen Time / Family Controls (iOS)</strong> — to apply
+              app restrictions you select through Apple&apos;s system picker
+              (see &ldquo;Screen Time and App Restriction Permissions&rdquo;
               below).
             </>,
             <>
+              <strong>Accessibility Service (Android)</strong> — to detect when a
+              locked app is opened so the reflection screen can appear (see
+              disclosure below).
+            </>,
+            <>
               <strong>Usage access / display over other apps</strong> — to show
-              the ImanFocus lock screen on top of distracting apps.
+              the ImanFocus lock screen on top of distracting apps (Android,
+              where applicable).
             </>,
             <>
               <strong>Notifications</strong> — for Salah reminders, dhikr
               prompts, and streak nudges. Optional and can be disabled.
             </>,
+          ]}
+        />
+      </Section>
+
+      <Section title="Screen Time and App Restriction Permissions">
+        <p>
+          ImanFocus may request permission to use Apple&apos;s Screen Time APIs
+          (Family Controls) on your iPhone or iPad. This permission is optional
+          and is used only if you choose to enable app restriction features that
+          help you intentionally reduce distractions.
+        </p>
+        <p>
+          <strong>How it works.</strong> If you enable app restriction, you
+          choose which apps to limit using Apple&apos;s system app picker
+          (Family Activity Picker). ImanFocus does not choose apps for you.
+          Restrictions are applied on your device through Apple&apos;s Family
+          Controls, Managed Settings, and related Screen Time frameworks. When
+          you try to open a restricted app, iOS may show a shield screen and
+          direct you back to ImanFocus to complete a short spiritual pause (such
+          as dhikr, reflection, or Quran reading) before you can unlock access
+          for a period you select.
+        </p>
+        <p>
+          <strong>What we do not collect.</strong> ImanFocus does{" "}
+          <strong>not</strong> receive a list of apps installed on your device.
+          Apple does not provide developers with a readable catalog of your
+          installed applications. ImanFocus does <strong>not</strong> collect,
+          sell, rent, or share app usage data, Screen Time data, or information
+          about which apps you use, how often you use them, or how long you use
+          them. The apps you select for restriction are represented by protected
+          application identifiers (tokens) managed by Apple&apos;s system. These
+          identifiers are stored on your device only as needed to apply and
+          remove restrictions you have requested. They are{" "}
+          <strong>not</strong> uploaded to ImanFocus servers and are not
+          accessible to us in a form that reveals your installed apps.
+        </p>
+        <p>
+          <strong>Your other data stays private.</strong> Quran reading
+          progress, hasanat tracking, reflection and mood check-ins, streaks,
+          and focus-session activity are stored locally on your device unless
+          you explicitly choose to share something outside the app (for example,
+          by using a standard iOS share sheet). This information is used solely
+          to provide ImanFocus&apos;s focus and spiritual-growth features.
+        </p>
+        <p>
+          <strong>No advertising or sale of data.</strong> ImanFocus does not
+          sell your personal information. We do not use Screen Time or
+          app-restriction information for advertising, and no third-party
+          advertising networks receive Screen Time information from ImanFocus.
+        </p>
+        <Bullets
+          items={[
+            "You can revoke Screen Time permission for ImanFocus at any time in Settings → Screen Time on your device.",
+            "Removing permission stops app restriction from working; other on-device features may continue according to your settings.",
+            "Deleting the app removes locally stored app data from your device, subject to iOS behavior for app extensions and shared containers.",
           ]}
         />
       </Section>
