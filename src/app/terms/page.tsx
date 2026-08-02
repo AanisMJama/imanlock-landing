@@ -29,7 +29,8 @@ export default function TermsPage() {
       <Section title="2. Description of Service &amp; Permitted Use">
         <p>
           ImanFocus is a digital wellbeing app that helps you pause and remember
-          Allah before using distracting apps. You may use the App for your
+          Allah while using your phone — through mindful sessions, Quran, dhikr,
+          reflection, and hasanat tracking. You may use the App for your
           personal, non-commercial purposes in accordance with these Terms and
           all applicable laws.
         </p>
@@ -56,7 +57,7 @@ export default function TermsPage() {
 
       <Section title="4. Subscription Terms">
         <p>
-          ImanFocus may offer optional paid subscriptions that unlock premium
+          ImanFocus may offer optional paid subscriptions that include premium
           features. The following applies to subscriptions:
         </p>
         <Bullets
@@ -93,7 +94,7 @@ export default function TermsPage() {
         <p>
           The App is provided “as is” and “as available” without warranties of
           any kind, whether express or implied. We do not warrant that the App
-          will be uninterrupted, error-free, or that app blocking will function
+          will be uninterrupted, error-free, or that every feature will function
           perfectly on every device or operating system.
         </p>
         <p>

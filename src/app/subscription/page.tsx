@@ -5,7 +5,7 @@ import { SubscriptionPanel } from "@/components/site/SubscriptionPanel";
 export const metadata: Metadata = {
   title: "Manage Subscription — ImanFocus",
   description:
-    "View your ImanFocus subscription status, restore purchases, and manage your plan. Premium subscription features are coming soon.",
+    "View your ImanFocus subscription status, restore purchases, and manage your plan.",
   alternates: { canonical: "https://imanfocus.app/subscription" },
 };
 

@@ -4,7 +4,7 @@ import { PageShell, Section, Bullets } from "@/components/site/PageShell";
 export const metadata: Metadata = {
   title: "Privacy Policy — ImanFocus",
   description:
-    "How ImanFocus collects, uses, and protects your data. Learn about our analytics, device permissions, and Accessibility Service usage. We never sell your personal data.",
+    "How ImanFocus collects, uses, and protects your data. Learn about on-device storage, notifications, and analytics. We never sell your personal data.",
   alternates: { canonical: "https://imanfocus.app/privacy" },
 };
 
@@ -14,14 +14,14 @@ export default function PrivacyPage() {
       eyebrow="Legal"
       title="Privacy Policy"
       intro="Your trust is an amanah. This policy explains what ImanFocus collects, how it is used, and the choices you have."
-      updated="June 22, 2026"
+      updated="August 2, 2026"
     >
       <Section title="What ImanFocus Does">
         <p>
-          ImanFocus is a mindfulness and digital wellbeing app for Muslims. It
-          helps you pause before opening distracting apps by guiding you through
-          a moment of remembrance — checking in with your mood, reflecting on a
-          verse of the Quran, and making dua — before your selected apps unlock.
+          ImanFocus is a mindfulness app for Muslims. It helps you pause while
+          using your phone, remember Allah through Quran, dhikr, reflection, and
+          hadith, track your hasanat and streaks, and return to your day with
+          intention.
         </p>
         <p>
           Our goal is to help you build a healthier, more intentional
@@ -35,14 +35,14 @@ export default function PrivacyPage() {
         <Bullets
           items={[
             <>
-              <strong>Email address</strong> — only if you join our waitlist or
-              contact our support team. This is used to communicate with you and
-              for nothing else.
+              <strong>Email address</strong> — only if you contact our support
+              team. This is used to respond to you and for nothing else.
             </>,
             <>
-              <strong>App usage &amp; preferences</strong> — settings such as
-              which apps you choose to lock, your streaks, moods, and reflection
-              history. Where possible, this is stored locally on your device.
+              <strong>App preferences &amp; progress</strong> — settings such as
+              session preferences, Quran reading progress, hasanat totals,
+              streaks, and reflection history. Where possible, this is stored
+              locally on your device.
             </>,
             <>
               <strong>Analytics data</strong> — anonymized, aggregated usage
@@ -57,12 +57,10 @@ export default function PrivacyPage() {
         />
       </Section>
 
-      <Section title="Email Addresses &amp; Waitlist">
+      <Section title="Email &amp; Support">
         <p>
-          If you join the ImanFocus waitlist or email us, we store your email
-          address solely to send you product updates, respond to your inquiry,
-          or notify you when the app becomes available in your region. You can
-          ask us to delete your email at any time by contacting{" "}
+          If you email us, we store your email address solely to respond to your
+          inquiry. You can ask us to delete your email at any time by contacting{" "}
           <a
             href="mailto:hello@imanfocus.app"
             className="font-semibold text-iman-primary hover:underline"
@@ -90,106 +88,26 @@ export default function PrivacyPage() {
         <Bullets
           items={[
             <>
-              <strong>Screen Time / Family Controls (iOS)</strong> — to apply
-              app restrictions you select through Apple&apos;s system picker
-              (see &ldquo;Screen Time and App Restriction Permissions&rdquo;
-              below).
-            </>,
-            <>
-              <strong>Accessibility Service (Android)</strong> — to detect when a
-              locked app is opened so the reflection screen can appear (see
-              disclosure below).
-            </>,
-            <>
-              <strong>Usage access / display over other apps</strong> — to show
-              the ImanFocus lock screen on top of distracting apps (Android,
-              where applicable).
-            </>,
-            <>
-              <strong>Notifications</strong> — for Salah reminders, dhikr
-              prompts, and streak nudges. Optional and can be disabled.
+              <strong>Notifications</strong> — for mindful session reminders,
+              dhikr prompts, and streak nudges. Optional and can be disabled.
             </>,
           ]}
         />
       </Section>
 
-      <Section title="Screen Time and App Restriction Permissions">
+      <Section title="On-Device Features">
         <p>
-          ImanFocus may request permission to use Apple&apos;s Screen Time APIs
-          (Family Controls) on your iPhone or iPad. This permission is optional
-          and is used only if you choose to enable app restriction features that
-          help you intentionally reduce distractions.
-        </p>
-        <p>
-          <strong>How it works.</strong> If you enable app restriction, you
-          choose which apps to limit using Apple&apos;s system app picker
-          (Family Activity Picker). ImanFocus does not choose apps for you.
-          Restrictions are applied on your device through Apple&apos;s Family
-          Controls, Managed Settings, and related Screen Time frameworks. When
-          you try to open a restricted app, iOS may show a shield screen and
-          direct you back to ImanFocus to complete a short spiritual pause (such
-          as dhikr, reflection, or Quran reading) before you can unlock access
-          for a period you select.
-        </p>
-        <p>
-          <strong>What we do not collect.</strong> ImanFocus does{" "}
-          <strong>not</strong> receive a list of apps installed on your device.
-          Apple does not provide developers with a readable catalog of your
-          installed applications. ImanFocus does <strong>not</strong> collect,
-          sell, rent, or share app usage data, Screen Time data, or information
-          about which apps you use, how often you use them, or how long you use
-          them. The apps you select for restriction are represented by protected
-          application identifiers (tokens) managed by Apple&apos;s system. These
-          identifiers are stored on your device only as needed to apply and
-          remove restrictions you have requested. They are{" "}
-          <strong>not</strong> uploaded to ImanFocus servers and are not
-          accessible to us in a form that reveals your installed apps.
-        </p>
-        <p>
-          <strong>Your other data stays private.</strong> Quran reading
-          progress, hasanat tracking, reflection and mood check-ins, streaks,
-          and focus-session activity are stored locally on your device unless
-          you explicitly choose to share something outside the app (for example,
-          by using a standard iOS share sheet). This information is used solely
-          to provide ImanFocus&apos;s focus and spiritual-growth features.
+          Quran reading progress, hasanat tracking, reflection check-ins,
+          streaks, and mindful session activity are stored locally on your
+          device unless you explicitly choose to share something outside the app
+          (for example, by using a standard iOS share sheet). This information
+          is used solely to provide ImanFocus&apos;s spiritual-growth features.
         </p>
         <p>
           <strong>No advertising or sale of data.</strong> ImanFocus does not
-          sell your personal information. We do not use Screen Time or
-          app-restriction information for advertising, and no third-party
-          advertising networks receive Screen Time information from ImanFocus.
-        </p>
-        <Bullets
-          items={[
-            "You can revoke Screen Time permission for ImanFocus at any time in Settings → Screen Time on your device.",
-            "Removing permission stops app restriction from working; other on-device features may continue according to your settings.",
-            "Deleting the app removes locally stored app data from your device, subject to iOS behavior for app extensions and shared containers.",
-          ]}
-        />
-      </Section>
-
-      <Section title="Accessibility Service Disclosure">
-        <p>
-          ImanFocus uses Android&apos;s Accessibility Service to provide its core
-          feature: gently intervening before you open a distracting app.
-        </p>
-        <Bullets
-          items={[
-            "The Accessibility Service is used only to detect which app is currently in the foreground so ImanFocus can display the remembrance/lock screen for apps you have chosen to lock.",
-            "ImanFocus does not read, collect, log, or transmit the content of your screen, your keystrokes, your messages, or any personal data accessed via the Accessibility Service.",
-            "All processing related to the Accessibility Service happens locally on your device.",
-            "You may disable the Accessibility Service at any time in your device settings, which will turn off app blocking.",
-          ]}
-        />
-      </Section>
-
-      <Section title="How App Blocking Works">
-        <p>
-          When you choose apps to lock, ImanFocus detects when one of those apps
-          is launched and presents a full-screen reflection before granting
-          access. This blocking happens entirely on your device. ImanFocus does
-          not see what you do inside those apps — only that one of your selected
-          apps was opened, so it can show the lock screen.
+          sell your personal information. We do not use your app data for
+          advertising, and no third-party advertising networks receive this
+          information from ImanFocus.
         </p>
       </Section>
 

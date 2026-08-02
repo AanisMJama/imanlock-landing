@@ -598,7 +598,7 @@ export function SuccessScreen({ onDone, interactive = false }: { onDone?: () => 
           transition={{ delay: 0.52 }}
           className="mt-3 max-w-[210px] text-sm text-white/80"
         >
-          Your heart is centered. Apps unlocked — use them with intention.
+          Your heart is centered. Return to your day with intention.
         </motion.p>
       </div>
 

@@ -18,26 +18,7 @@ type Provider = "apple" | "google" | "email";
 const ART = {
   gold: "#E8B23A", // crescent moon
   goldSoft: "#F2D27A",
-  block: "#E5484D", // prohibition slash
 } as const;
-
-/**
- * Distraction apps shown blocked in the hero. Brand glyphs are the same
- * FontAwesome6 brand icons the ImanFocus app renders in AppIconCard, with the
- * identical brand tile colours from src/data/apps.ts.
- */
-const BLOCKED_APPS = [
-  { id: "instagram", label: "Instagram", color: "#E1306C", pos: "left-1 top-4" },
-  { id: "tiktok", label: "TikTok", color: "#000000", pos: "right-1 top-4" },
-  { id: "youtube", label: "YouTube", color: "#FF0000", pos: "-left-2 bottom-16" },
-  {
-    id: "snapchat",
-    label: "Snapchat",
-    color: "#FFFC00",
-    glyph: "#111111",
-    pos: "-right-2 bottom-16",
-  },
-] as const;
 
 export function Onboarding() {
   const router = useRouter();
@@ -112,8 +93,8 @@ export function Onboarding() {
             <ClockGlyph className="h-6 w-6" />
           </span>
           <p className="text-[14.5px] font-medium leading-snug text-slate-600">
-            Protect your focus, build better habits, and grow closer to Allah
-            every day.
+            Pause with intention, remember Allah, and grow closer to Him every
+            day.
           </p>
         </div>
 
@@ -277,111 +258,8 @@ function IslamicScene() {
         />
       </div>
 
-      {/* Blocked distraction apps — same FontAwesome6 brand glyphs and tile
-          colours the ImanFocus app uses in AppIconCard */}
-      {BLOCKED_APPS.map((app) => (
-        <BlockedAppTile
-          key={app.id}
-          appId={app.id}
-          label={app.label}
-          color={app.color}
-          glyphColor={"glyph" in app ? app.glyph : "#FFFFFF"}
-          className={app.pos}
-        />
-      ))}
     </div>
   );
-}
-
-function BlockedAppTile({
-  appId,
-  label,
-  color,
-  glyphColor,
-  className = "",
-}: {
-  appId: string;
-  label: string;
-  color: string;
-  glyphColor: string;
-  className?: string;
-}) {
-  return (
-    <div
-      role="img"
-      aria-label={`${label} blocked`}
-      className={`absolute h-[52px] w-[52px] ${className}`}
-    >
-      {/* App Store style rounded tile in the app's exact brand colour */}
-      <div
-        className="grid h-full w-full place-items-center rounded-[15px] shadow-[0_8px_18px_-6px_rgba(0,0,0,0.5)] ring-1 ring-black/5"
-        style={{ backgroundColor: color }}
-      >
-        <BrandGlyph appId={appId} color={glyphColor} />
-      </div>
-      {/* clean prohibition ring + slash */}
-      <svg
-        viewBox="0 0 52 52"
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        aria-hidden="true"
-      >
-        <circle
-          cx="26"
-          cy="26"
-          r="24"
-          fill="none"
-          stroke={ART.block}
-          strokeWidth="3.5"
-        />
-        <line
-          x1="9.5"
-          y1="42.5"
-          x2="42.5"
-          y2="9.5"
-          stroke={ART.block}
-          strokeWidth="3.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    </div>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  Brand glyphs — official FontAwesome 6 brand paths, matching the    */
-/*  app's @expo/vector-icons FontAwesome6 glyphs in AppIconCard.       */
-/* ------------------------------------------------------------------ */
-
-function BrandGlyph({ appId, color }: { appId: string; color: string }) {
-  const common = { fill: color, "aria-hidden": true as const };
-  switch (appId) {
-    case "instagram":
-      return (
-        <svg viewBox="0 0 448 512" className="h-[26px] w-[26px]" {...common}>
-          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-        </svg>
-      );
-    case "tiktok":
-      return (
-        <svg viewBox="0 0 448 512" className="h-[24px] w-[24px]" {...common}>
-          <path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z" />
-        </svg>
-      );
-    case "youtube":
-      return (
-        <svg viewBox="0 0 576 512" className="h-[26px] w-[26px]" {...common}>
-          <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
-        </svg>
-      );
-    case "snapchat":
-      return (
-        <svg viewBox="0 0 496 512" className="h-[26px] w-[26px]" {...common}>
-          <path d="M496.926 366.6c-3.373-9.176-9.8-14.086-17.112-18.153-1.376-.806-2.641-1.451-3.72-1.947-2.182-1.128-4.414-2.22-6.634-3.373-22.8-12.09-40.609-27.341-52.959-45.42a102.889 102.889 0 0 1-9.089-16.12c-1.054-3.013-1-4.724-.248-6.287a10.221 10.221 0 0 1 2.914-3.038c3.918-2.591 7.96-5.22 10.7-6.992 4.885-3.162 8.754-5.667 11.246-7.44 9.362-6.547 15.909-13.5 20-21.278a42.371 42.371 0 0 0 2.1-35.191c-6.2-16.318-21.613-26.449-40.287-26.449a55.543 55.543 0 0 0-11.718 1.24c-1.029.224-2.059.459-3.063.72.174-11.16-.074-22.94-1.066-34.534-3.522-40.758-17.794-62.123-32.674-79.16a130.167 130.167 0 0 0-33.281-26.783C309.515 9.388 288.949 0 256.16 0S202.954 9.388 184.327 21.475a129.643 129.643 0 0 0-33.331 26.795c-14.88 17.038-29.152 38.4-32.674 79.161-.992 11.594-1.24 23.374-1.066 34.534-1-.261-2.034-.5-3.063-.72a55.543 55.543 0 0 0-11.718-1.24c-18.674 0-34.063 10.131-40.287 26.449a42.413 42.413 0 0 0 2.1 35.215c4.09 7.774 10.637 14.731 20 21.278 2.492 1.773 6.361 4.278 11.246 7.44 2.641 1.71 6.51 4.222 10.31 6.733a10.5 10.5 0 0 1 3.286 3.3c.794 1.624.844 3.36-.36 6.56a102.673 102.673 0 0 1-8.879 15.71c-12.077 17.673-29.36 32.626-51.485 44.665-11.717 6.2-23.882 10.328-29.6 25.892-4.314 11.747-1.488 25.106 9.471 36.388a52.785 52.785 0 0 0 13.339 10.211 138.109 138.109 0 0 0 33.281 13.563 15.137 15.137 0 0 1 4.652 2.075c3.6 3.137 3.087 7.861 7.857 14.768a34.34 34.34 0 0 0 8.974 9.275c10.5 7.241 22.31 7.7 34.806 8.183 11.28.459 24.063.971 38.658 5.791 6.039 1.984 12.314 5.842 19.589 10.285C240.124 504.94 253.6 512 277.61 512c.359 0 .732-.012 1.116-.037 8.55-.4 17.4-1.7 25.728-3.733 15.412-3.726 31.07-9.747 42.9-13.563 4.652-1.512 9.359-2.717 12.682-2.717a8.7 8.7 0 0 1 2.6.349c8.7 1.488 11.871 5.97 17.39 12.838 5.978 7.434 11.971 14.917 21.029 19.515 9.781 4.971 21.749 5.408 33.554 5.408a169.85 169.85 0 0 0 28.4-2.4c11.785-1.984 18.456-3.733 24.806-7.466 4.59-2.7 10.273-6.014 15.412-12.5 4.59-5.791 7.018-13.075 7.732-21.625a32.451 32.451 0 0 0-2.554-14.917z" />
-        </svg>
-      );
-    default:
-      return null;
-  }
 }
 
 /* ------------------------------------------------------------------ */

@@ -34,14 +34,14 @@ export function SubscriptionPanel() {
         </h3>
         <p className="mt-2 text-slate-600">
           You&apos;re currently on the free plan. Premium subscription features
-          are on the way.
+          will appear here when available.
         </p>
 
         <div className="mt-6 rounded-2xl bg-iman-light/60 p-4">
           <div className="flex items-center gap-2 text-iman-deep">
             <IconSparkle className="h-5 w-5 text-iman-primary" />
             <span className="text-sm font-semibold">
-              Subscription features coming soon.
+              Manage your plan and restore purchases from this page.
             </span>
           </div>
         </div>
@@ -50,14 +50,14 @@ export function SubscriptionPanel() {
       {/* Premium preview card */}
       <div className="rounded-3xl border border-iman-primary/15 bg-gradient-to-br from-iman-light/70 to-white p-6 shadow-card sm:p-8">
         <h3 className="text-lg font-bold text-iman-deep">
-          ImanFocus Premium <span className="text-iman-primary">(soon)</span>
+          ImanFocus Premium
         </h3>
         <ul className="mt-4 space-y-2.5">
           {[
-            "Unlimited app locks & schedules",
             "Advanced AI dua personalization",
             "Full Quran & hadith reflection library",
             "Detailed streak & habit insights",
+            "Hasanat growth insights",
           ].map((f) => (
             <li key={f} className="flex items-center gap-3 text-sm text-slate-600">
               <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-iman-primary/15 text-iman-primary">
@@ -72,7 +72,7 @@ export function SubscriptionPanel() {
       {/* Actions */}
       <div className="flex flex-col gap-3 sm:flex-row">
         <button
-          onClick={() => ping("Restore purchases will be available once subscriptions launch.")}
+          onClick={() => ping("Restore purchases will be available with App Store subscriptions.")}
           className="flex-1 rounded-2xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-iman-deep transition-colors hover:bg-iman-light"
         >
           Restore Purchases

@@ -1,7 +1,8 @@
 import { HeroPhone } from "@/components/phone/HeroPhone";
 import { GooglePlayBadge, AppStoreBadge } from "@/components/StoreBadges";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { Waitlist } from "@/components/site/Waitlist";
+
+const APP_STORE_URL = "https://apps.apple.com/";
 
 export function Landing() {
   return (
@@ -11,29 +12,29 @@ export function Landing() {
           {/* Headline */}
           <div className="order-1 text-center lg:col-start-1 lg:row-start-1 lg:self-end lg:text-left">
             <h1 className="text-5xl font-extrabold leading-[1.04] tracking-tight text-black sm:text-6xl lg:text-7xl">
-              your phone is
+              Pause.
               <br />
-              taking you
+              Remember Allah.
               <br />
               <span className="text-iman-primary">
-                away from
+                Return with
                 <br />
-                Allah
+                Intention.
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-md text-lg text-slate-600 sm:text-xl lg:mx-0">
-              block distracting apps until you{" "}
-              <span className="font-semibold text-iman-primary">
-                remember Allah
-              </span>
+              While scrolling social media,{" "}
+              <span className="font-semibold text-iman-primary">remember Allah</span>
+              .
             </p>
 
-            {/* Pre-launch waitlist: collect interested users before ads. */}
             <div className="mt-8 flex flex-col items-center gap-2 lg:items-start">
-              <Waitlist source="landing_hero" />
-              <p className="text-sm text-slate-500">
-                Not public yet — be the first to know when we launch.
-              </p>
+              <a
+                href={APP_STORE_URL}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-iman-primary px-7 py-3.5 text-base font-bold text-white shadow-btn-primary transition-transform hover:-translate-y-0.5"
+              >
+                Download ImanFocus
+              </a>
             </div>
           </div>
 
@@ -49,9 +50,9 @@ export function Landing() {
             </div>
           </div>
 
-          {/* Download badges — disabled until real store URLs are available */}
+          {/* Download badges */}
           <div className="order-3 flex flex-wrap items-center justify-center gap-3 lg:col-start-1 lg:row-start-2 lg:justify-start lg:self-start">
-            <AppStoreBadge comingSoon />
+            <AppStoreBadge href={APP_STORE_URL} comingSoon={false} />
             <GooglePlayBadge comingSoon />
           </div>
         </div>

@@ -21,18 +21,18 @@ const SITE_URL = "https://imanfocus.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "ImanFocus — Remember Allah Before You Unlock",
+  title: "ImanFocus — Pause. Remember Allah. Return with Intention.",
   description:
-    "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanFocus.",
+    "While scrolling social media, remember Allah. Mindful sessions, Quran, dhikr, reflection, streaks, and hasanat — with ImanFocus.",
   keywords: [
     "ImanFocus",
     "Islamic app",
-    "app blocker",
     "remember Allah",
     "Muslim focus app",
     "dhikr",
-    "Quran reflection",
-    "screen time",
+    "Quran",
+    "hasanat",
+    "mindful session",
     "digital wellbeing",
   ],
   authors: [{ name: "ImanFocus" }],
@@ -43,16 +43,16 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "ImanFocus",
-    title: "ImanFocus — Remember Allah Before You Unlock",
+    title: "ImanFocus — Pause. Remember Allah. Return with Intention.",
     description:
-      "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanFocus.",
+      "While scrolling social media, remember Allah. Mindful sessions, Quran, dhikr, reflection, streaks, and hasanat — with ImanFocus.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ImanFocus — Remember Allah Before You Unlock",
+    title: "ImanFocus — Pause. Remember Allah. Return with Intention.",
     description:
-      "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanFocus.",
+      "While scrolling social media, remember Allah. Mindful sessions, Quran, dhikr, reflection, streaks, and hasanat — with ImanFocus.",
   },
   icons: {
     icon: "/favicon.svg",
@@ -71,9 +71,9 @@ const jsonLd = {
   "@type": "MobileApplication",
   name: "ImanFocus",
   description:
-    "Block distracting apps and build stronger Islamic habits. Remember Allah before scrolling with ImanFocus.",
+    "While scrolling social media, remember Allah. Mindful sessions, Quran, dhikr, reflection, streaks, and hasanat — with ImanFocus.",
   applicationCategory: "LifestyleApplication",
-  operatingSystem: "Android",
+  operatingSystem: "iOS",
   url: SITE_URL,
   offers: {
     "@type": "Offer",
