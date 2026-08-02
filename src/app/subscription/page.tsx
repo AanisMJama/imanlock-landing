@@ -3,9 +3,9 @@ import { PageShell } from "@/components/site/PageShell";
 import { SubscriptionPanel } from "@/components/site/SubscriptionPanel";
 
 export const metadata: Metadata = {
-  title: "Manage Subscription — ImanFocus",
+  title: "ImanFocus Premium — ImanFocus",
   description:
-    "View your ImanFocus subscription status, restore purchases, and manage your plan.",
+    "ImanFocus is currently free to use. Premium features are planned for a future update, insha’Allah.",
   alternates: { canonical: "https://imanfocus.app/subscription" },
 };
 
@@ -13,8 +13,8 @@ export default function SubscriptionPage() {
   return (
     <PageShell
       eyebrow="Account"
-      title="Manage Subscription"
-      intro="View your plan, restore previous purchases, and manage your ImanFocus subscription."
+      title="ImanFocus Premium"
+      intro="ImanFocus is currently free to use. Premium features are planned for a future update, insha’Allah."
     >
       <SubscriptionPanel />
     </PageShell>
