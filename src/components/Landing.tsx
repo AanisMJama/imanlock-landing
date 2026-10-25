@@ -1,12 +1,13 @@
 import { HeroPhone } from "@/components/phone/HeroPhone";
 import { GooglePlayBadge, AppStoreBadge } from "@/components/StoreBadges";
 import { SiteFooter } from "@/components/site/SiteFooter";
-
-const APP_STORE_URL = "https://apps.apple.com/";
+import { SiteHeader } from "@/components/site/SiteHeader";
 
 export function Landing() {
   return (
-    <main className="flex min-h-screen flex-col bg-white">
+    <>
+      <SiteHeader showBackLink={false} />
+      <main className="flex min-h-screen flex-col bg-white">
       <section className="mx-auto flex w-full max-w-6xl flex-1 items-center px-6 py-12 sm:px-8 lg:py-16">
         <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:grid-rows-[auto_auto] lg:gap-x-16 lg:gap-y-8">
           {/* Headline */}
@@ -29,12 +30,15 @@ export function Landing() {
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-2 lg:items-start">
-              <a
-                href={APP_STORE_URL}
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-iman-primary px-7 py-3.5 text-base font-bold text-white shadow-btn-primary transition-transform hover:-translate-y-0.5"
+              <span
+                aria-label="Search for ImanFocus manually in the App Store"
+                className="inline-flex cursor-default items-center justify-center gap-2 rounded-2xl bg-iman-primary px-7 py-3.5 text-base font-bold text-white shadow-btn-primary"
               >
                 Download ImanFocus
-              </a>
+              </span>
+              <p className="text-sm text-slate-500">
+                Search for “ImanFocus” manually in the App Store.
+              </p>
             </div>
           </div>
 
@@ -52,7 +56,7 @@ export function Landing() {
 
           {/* Download badges */}
           <div className="order-3 flex flex-wrap items-center justify-center gap-3 lg:col-start-1 lg:row-start-2 lg:justify-start lg:self-start">
-            <AppStoreBadge href={APP_STORE_URL} comingSoon={false} />
+            <AppStoreBadge static />
             <GooglePlayBadge comingSoon />
           </div>
         </div>
@@ -60,6 +64,7 @@ export function Landing() {
 
       {/* Footer */}
       <SiteFooter bordered={false} />
-    </main>
+      </main>
+      </>
   );
 }
