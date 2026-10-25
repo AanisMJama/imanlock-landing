@@ -21,7 +21,7 @@ function BadgeShell({
   comingSoon,
   className,
   ariaLabel,
-  static = false,
+  static: isStatic = false,
   children,
 }: {
   href?: string;
@@ -31,11 +31,11 @@ function BadgeShell({
   static?: boolean;
   children: ReactNode;
 }) {
-  const classes = `${badgeBase} ${comingSoon ? badgeDisabled : static ? "cursor-default shadow-md" : badgeInteractive} ${className}`;
+  const classes = `${badgeBase} ${comingSoon ? badgeDisabled : isStatic ? "cursor-default shadow-md" : badgeInteractive} ${className}`;
 
-  if (comingSoon || static) {
+  if (comingSoon || isStatic) {
     return (
-      <span aria-label={static ? ariaLabel : `${ariaLabel} — coming soon`} className={classes}>
+      <span aria-label={isStatic ? ariaLabel : `${ariaLabel} — coming soon`} className={classes}>
         {children}
       </span>
     );
