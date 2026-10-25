@@ -4,6 +4,7 @@ type BadgeProps = {
   href?: string;
   comingSoon?: boolean;
   className?: string;
+  static?: boolean;
 };
 
 const badgeBase =
@@ -20,19 +21,21 @@ function BadgeShell({
   comingSoon,
   className,
   ariaLabel,
+  static = false,
   children,
 }: {
   href?: string;
   comingSoon: boolean;
   className: string;
   ariaLabel: string;
+  static?: boolean;
   children: ReactNode;
 }) {
-  const classes = `${badgeBase} ${comingSoon ? badgeDisabled : badgeInteractive} ${className}`;
+  const classes = `${badgeBase} ${comingSoon ? badgeDisabled : static ? "cursor-default shadow-md" : badgeInteractive} ${className}`;
 
-  if (comingSoon) {
+  if (comingSoon || static) {
     return (
-      <span aria-label={`${ariaLabel} — coming soon`} className={classes}>
+      <span aria-label={static ? ariaLabel : `${ariaLabel} — coming soon`} className={classes}>
         {children}
       </span>
     );
@@ -89,22 +92,24 @@ export function AppStoreBadge({
   href,
   comingSoon = true,
   className = "",
+  static: isStatic = false,
 }: BadgeProps) {
   return (
     <BadgeShell
       href={href}
       comingSoon={comingSoon}
+      static={isStatic}
       className={className}
-      ariaLabel="Download on the App Store"
+      ariaLabel={isStatic ? "Search for ImanFocus manually in the App Store" : "Download on the App Store"}
     >
       <svg viewBox="0 0 384 512" className="h-7 w-7 shrink-0 fill-white" aria-hidden="true">
         <path d="M318.7 268c-.2-37 16.6-65 50.6-86-19-27-47.5-42-85.6-45-36-3-75 21-89 21-14 0-49-20-78-19-40 .6-77 23-98 59-42 73-11 181 30 240 20 29 44 62 75 60 30-1 41-19 78-19 36 0 47 19 78 18 32-.5 53-29 73-58 14-21 25-44 31-67-1-1-59-23-59-90zM262 60c17-21 28-50 25-79-25 1-55 17-73 38-16 18-30 47-26 75 28 2 56-14 74-34z" />
       </svg>
       <span className="flex flex-col leading-tight text-left">
         <span className="text-[10px] uppercase tracking-wide text-white/70">
-          {comingSoon ? "Coming soon on the" : "Download on the"}
+          {isStatic ? "Search manually for" : comingSoon ? "Coming soon on the" : "Download on the"}
         </span>
-        <span className="text-lg font-semibold">App Store</span>
+        <span className="text-lg font-semibold">{isStatic ? "ImanFocus" : "App Store"}</span>
       </span>
     </BadgeShell>
   );
