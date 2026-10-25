@@ -17,7 +17,7 @@ const amiri = Amiri({
   display: "swap",
 });
 
-const SITE_URL = "https://imanfocus.app";
+const SITE_URL = "https://imanfocus.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
